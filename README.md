@@ -1,7 +1,7 @@
 # Minecraft Plugin Runtime Test
 A github action (CI/CD) for testing minecraft plugins on combination of server version.
 
-## How it works
+### How it works
 #### Prerequisite Steps
 1. Make server plugins directory
 2. Download build artifact from previous workflow build step
@@ -15,7 +15,7 @@ A github action (CI/CD) for testing minecraft plugins on combination of server v
 4. Download slimefun jar
 5. Run Server
 
-## Usage
+### Usage
 - Create an action file inside ```./github/workflows``` in the scope of your plugin repository and configure the steps if necessary:
 ```yml
 name: Build with Maven and Run Runtime Test
@@ -76,3 +76,8 @@ jobs:
           java-version: ${{ matrix.javaVersion }}
           artifact-name: artifact-${{ github.event.number }}
 ```
+
+### Plugins Included by Default During Runtime
+- Slimefun
+
+Suggestions are open for plugins that depends on other plugins.
