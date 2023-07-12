@@ -1,5 +1,5 @@
 name: 'Minecraft Plugin Runtime Test'
-description: 'A github action for testing minecraft plugins on combination of server versions'
+description: 'A github action for testing minecraft plugins on combination of paper server versions'
 branding:
   icon: 'terminal'
   color: 'green'
