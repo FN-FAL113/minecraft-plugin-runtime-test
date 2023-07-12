@@ -1,8 +1,5 @@
 name: 'Minecraft Plugin Runtime Test'
 description: 'A github action for testing minecraft plugins on combination of server versions'
-branding:
-  icon: 'terminal'
-  color: 'green'
 inputs:
   server-version:
     required: true
@@ -22,11 +19,6 @@ runs:
       with:
         repository: FN-FAL113/minecraft-plugin-runtime-test
         ref: main
-
-    - name: Make Server Plugins Directory
-      shell: bash
-      run: |
-        mkdir -p server/plugins
         
     - name: Download Plugin Build Artifact
       uses: actions/download-artifact@v3
