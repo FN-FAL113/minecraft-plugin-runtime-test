@@ -70,7 +70,7 @@ jobs:
             javaVersion: '20'  
     
     steps:        
-      - uses: FN-FAL113/minecraft-plugin-runtime-test@main
+      - uses: FN-FAL113/minecraft-plugin-runtime-test@v1 # specify action version, use latest as possible
         with:
           server-version: ${{ matrix.mcVersion }}
           java-version: ${{ matrix.javaVersion }}
