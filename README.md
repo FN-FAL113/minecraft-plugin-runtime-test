@@ -81,4 +81,4 @@ jobs:
 ### Plugins Included by Default During Runtime
 - Slimefun
 
-Suggestions are open for plugins that depends on other plugins.
+Suggestions are open for plugins that depends on other plugins. This will be based off from a resource file soon in order to accomomdate more plugins or so this repo can be forked to support your plugins.
