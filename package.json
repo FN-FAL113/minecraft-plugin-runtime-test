@@ -1,0 +1,11 @@
+{
+  "name": "minecraft-plugin-runtime-test",
+  "version": "1.0.0",
+  "description": "A github action for testing minecraft plugins on combination of server version",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "FN-FAL113",
+  "license": "GPL-3.0-or-later"
+}

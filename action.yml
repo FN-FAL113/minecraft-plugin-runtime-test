@@ -1,0 +1,51 @@
+name: 'Minecraft Plugin Runtime Test'
+description: 'A github action for testing minecraft plugins on combination of server versions'
+inputs:
+  server-version:
+    required: true
+    default: '1.20.1'
+  artifact-name:
+    required: true
+    default: ''
+  java-version:
+    required: true
+    default: '17'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checking out Action Repository
+      uses: actions/checkout@v3.5.3
+      with:
+        repository: FN-FAL113/minecraft-plugin-runtime-test
+        ref: main
+
+    - name: Make Server Plugins Directory
+      shell: bash
+      run: |
+        mkdir -p server/plugins
+        
+    - name: Download Plugin Build Artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: server/plugins/
+
+    - name: Setting up Java ${{ inputs.java-version }}
+      uses: actions/setup-java@v3.11.0
+      with:
+        distribution: 'adopt'
+        java-version: ${{ inputs.java-version }}
+        java-package: jdk
+        architecture: x64
+
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+          node-version: '16.x'
+
+    - name: Running Test on Paper-${{ inputs.server-version }}
+      shell: bash
+      env: 
+        SERVER_VERSION: ${{ inputs.server-version }} 
+      run: npm start
