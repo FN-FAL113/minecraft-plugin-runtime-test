@@ -52,8 +52,8 @@ jobs:
         name: artifact-${{ github.event.number }}
         path: 'target/FNAmplifications*.jar' # Change this according to the location and filename of your packaged jar, you may use wildcards
   
-  e2e-test:
-    name: End to End Test
+  runtime-test:
+    name: Plugin Runtime Test 
     needs: [build]
     runs-on: ubuntu-latest
     strategy:
