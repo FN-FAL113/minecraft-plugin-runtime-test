@@ -1,6 +1,7 @@
 # Minecraft Plugin Runtime Test
-Github action for testing plugins during server bootup on different versions of paper server.
-![image](https://github.com/FN-FAL113/minecraft-plugin-runtime-test/assets/88238718/d7f4bb8b-11ff-4e26-95cf-027cad20cb31)
+Github action for testing minecraft plugins initialization during server load on different versions of paper server.
+![image](https://github.com/FN-FAL113/minecraft-plugin-runtime-test/assets/88238718/5086ee38-b1a3-4860-961a-1929124db85c)
+
 
 ### How it works
 #### Prerequisite Steps
