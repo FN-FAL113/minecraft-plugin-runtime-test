@@ -19,7 +19,8 @@ async function main(){
 
         const slimefunJarUrl = 'https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/Slimefun4-1081.jar'
 
-        await fsPromise.mkdir("server/plugins", { recursive: true })
+        // for testing locally, make necessary directories: 
+        // await fsPromise.mkdir("server/plugins", { recursive: true }) 
 
         await fsPromise.writeFile('server/eula.txt', "eula=true").catch((err) => console.log("error writing contents to eula.txt: " + err))
 
