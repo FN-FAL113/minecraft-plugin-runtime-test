@@ -19,7 +19,7 @@ Github action for testing plugins during server bootup on different versions of 
 ### Usage
 - Create an action file inside ```./github/workflows``` in the scope of your plugin repository and configure the steps if necessary:
 ```yml
-name: Build with Maven and Run Runtime Test
+name: Build with Maven and Do Runtime Test
 
 on:
   workflow_dispatch:
