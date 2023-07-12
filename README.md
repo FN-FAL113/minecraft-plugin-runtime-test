@@ -1,15 +1,15 @@
 # Minecraft Plugin Runtime Test
-A github action (CI/CD) for testing minecraft plugins on combination of server version.
+Github action for testing plugins during server bootup on different versions of paper server.
 ![image](https://github.com/FN-FAL113/minecraft-plugin-runtime-test/assets/88238718/d7f4bb8b-11ff-4e26-95cf-027cad20cb31)
 
 ### How it works
 #### Prerequisite Steps
-1. Make server plugins directory
+1. Checkout actions repository
 2. Download build artifact from previous workflow build step
 3. Set up Java 17
 4. Setup Node 16
-6. Execute js file
-#### Js File
+5. Execute index.js file
+#### index.js
 1. Create and initialize ```eula.txt```
 2. Fetch latest server build
 3. Download server jar through https get request based from inputs data
@@ -71,7 +71,7 @@ jobs:
             javaVersion: '20'  
     
     steps:        
-      - uses: FN-FAL113/minecraft-plugin-runtime-test@v1 # specify action version, use latest as possible
+      - uses: FN-FAL113/minecraft-plugin-runtime-test@v1.1.2 # specify action version, use latest as possible
         with:
           server-version: ${{ matrix.mcVersion }}
           java-version: ${{ matrix.javaVersion }}
