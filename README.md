@@ -14,8 +14,7 @@ Github action for testing minecraft plugins initialization during server load on
 1. Create and initialize ```eula.txt```
 2. Fetch latest server build
 3. Download server jar through https get request based from inputs data
-4. Download slimefun jar
-5. Run Server
+4. Run Server
 
 ### Usage
 - Create an action file inside ```./github/workflows``` in the scope of your plugin repository and configure the steps if necessary:
