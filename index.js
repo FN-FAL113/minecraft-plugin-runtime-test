@@ -1,3 +1,5 @@
+// Author: FN-FAL113
+// License: GNU GPL v3
 const https = require('https')
 const fsPromise = require('fs').promises
 const fs = require('fs')
