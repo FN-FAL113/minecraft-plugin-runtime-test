@@ -4,17 +4,17 @@ Github action for testing minecraft plugins initialization during server load on
 
 
 ### How it works
-#### Prerequisite Steps
-1. Checkout actions repository
-2. Download build artifact from previous workflow build step
+#### Prerequisite Steps (Building the plugin)
+1. Checkout repository (in the context of the action caller)
+2. Download plugin build artifact from previous workflow build job
 3. Set up Java 17
 4. Setup Node 16
 5. Execute index.js file
-#### index.js
+#### index.js (When this action is called)
 1. Create and initialize ```eula.txt```
-2. Fetch latest server build
-3. Download server jar through https get request based from inputs data
-4. Run Server
+2. Fetch latest paper server build
+3. Download paper server jar (server version from matrix variable as input data to this action) 
+4. Execute mc server
 
 ### Usage
 - Create an action file inside ```./github/workflows``` in the scope of your plugin repository and configure the steps if necessary:
