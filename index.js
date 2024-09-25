@@ -5,7 +5,7 @@ const fsPromise = require('fs').promises
 const fs = require('fs')
 const childproc = require('child_process')
 
-async function main(){
+async function main() {
     try {
         if(!process.env.SERVER_VERSION) {
             console.error(`Missing "SERVER_VERSION" env variable value! Exiting process with code 1.`)
@@ -19,13 +19,13 @@ async function main(){
         const serverJarFileName = `${serverName}-${serverVersion}-${serverBuild}.jar`
         const serverJarUrl = `https://api.papermc.io/v2/projects/paper/versions/${serverVersion}/builds/${serverBuild}/downloads/${serverJarFileName}`
 
-        const slimefunJarUrl = 'https://thebusybiscuit.github.io/builds/TheBusyBiscuit/Slimefun4/master/Slimefun4-1081.jar'
+        const slimefunJarUrl = 'https://blob.build/dl/Slimefun4/Dev/1156'
 
         await fsPromise.writeFile('server/eula.txt', "eula=true").catch((err) => console.log("error writing contents to eula.txt: " + err))
 
         await downloadJar(serverJarUrl, 'server/', serverJarFileName)
 
-        await downloadJar(slimefunJarUrl, 'server/plugins/' , 'Slimefun4-1081.jar')
+        await downloadJar(slimefunJarUrl, 'server/plugins/' , 'Slimefun4-Dev.jar')
 
         runServer(serverJarFileName)
     } catch (error) {
@@ -34,7 +34,7 @@ async function main(){
     }
 }
 
-function getLatestServerBuild(serverVersion){
+function getLatestServerBuild(serverVersion) {
     return new Promise((resolve, reject) => {
         const url = `https://api.papermc.io/v2/projects/paper/versions/${serverVersion}/builds` 
 
@@ -58,7 +58,7 @@ function getLatestServerBuild(serverVersion){
     })
 }
 
-function downloadJar(url, dir, jarFile){
+function downloadJar(url, dir, jarFile) {
     return new Promise((resolve, reject) => {
         let receivedBytes = 0
 
@@ -88,7 +88,7 @@ function downloadJar(url, dir, jarFile){
     })
 }
 
-function runServer(jarFile){
+function runServer(jarFile) {
     console.log("Jar file execution in progress!")
 
     const child = childproc.spawn("java", ['-jar', `${jarFile}`, '--nogui'], { cwd:"server/" })
