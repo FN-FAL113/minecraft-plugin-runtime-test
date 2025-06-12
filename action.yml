@@ -16,13 +16,7 @@ inputs:
 
 runs:
   using: 'composite'
-  steps:
-    - name: Checking out Action Repository
-      uses: actions/checkout@v3.5.3
-      with:
-        repository: FN-FAL113/minecraft-plugin-runtime-test
-        ref: main
-        
+  steps:    
     - name: Download Plugin Build Artifact
       uses: actions/download-artifact@v4
       with:
