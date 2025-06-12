@@ -25,7 +25,7 @@ async function main() {
 
         await downloadJar(serverJarUrl, 'server/', serverJarFileName)
 
-        await downloadJar(slimefunJarUrl, 'server/plugins/' , 'Slimefun4-Experimental.jar')
+        await downloadJar(slimefunJarUrl, 'server/plugins/' , 'Slimefun4.jar')
 
         runServer(serverJarFileName)
     } catch (error) {
